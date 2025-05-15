@@ -100,19 +100,8 @@ Find the user you want to grant staff access.
 Check the "Staff status" box and save the user.
 Staff users can then access the staff dashboard at http://127.0.0.1:8000/staff/dashboard/.
 📂 Project Structure
-project/
-├── services/                 # Main application logic
-│   ├── admin.py              # Admin interface customizations for staff
-│   ├── models.py             # Defines the ServiceRequest data model
-│   ├── views.py              # Handles the logic for user and staff dashboards
-│   ├── urls.py               # Defines the URL patterns for the 'services' app
-│   └── templates/          # HTML templates for the 'services' app
-│       ├── dashboard.html    # Template for the user dashboard
-│       └── staff_dashboard.html # Template for the staff-only dashboard
-│   └── static/               # Static files (CSS, JavaScript) for the 'services' app
-├── templates/                # Global HTML templates for the project
-├── db.sqlite3                # Default SQLite database file
-└── manage.py                 # Django management script
+![image](https://github.com/user-attachments/assets/2e6ac965-55a9-4bcc-94fa-f84daf12d6fd)
+
 📌 Important Notes
 Ensure that the staff_dashboard.html file is located within the services/templates/ directory.
 Access to the staff dashboard (/staff/dashboard/) is restricted to users with staff status. You need to mark users as "staff" in the Django admin panel.
