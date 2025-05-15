@@ -29,47 +29,64 @@ This project is built using the following technologies:
     - HTML5
     - CSS (Template-based)
 
+
 ## ⚙️ Setup Instructions
 
-Follow these steps to get the application running on your local machine:
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/dhaneshredd6/Django-Gas-Utility-App.git](https://github.com/dhaneshredd6/Django-Gas-Utility-App.git)
-   cd gas-utility-system
-
-   Create and activate a virtual environment:
-
-Bash
-
+<table>
+  <tr>
+    <td style="width: 40%; vertical-align: top;"><strong>1. Clone the repository:</strong></td>
+    <td style="width: 60%; vertical-align: top;">
+      <code>
+      git clone [https://github.com/dhaneshredd6/Django-Gas-Utility-App.git](https://github.com/dhaneshredd6/Django-Gas-Utility-App.git)<br>
+      cd gas-utility-system
+      </code>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 40%; vertical-align: top;"><strong>2. Create and activate a virtual environment:</strong></td>
+    <td style="width: 60%; vertical-align: top;">
+      <pre><code class="language-bash">
 python -m venv env
 source env/bin/activate  # On Linux/macOS
 env\Scripts\activate   # On Windows
-Install dependencies:
-
- -Bash
-
--pip install -r requirements.txt
--Run database migrations:
-
-Bash
-
+      </code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 40%; vertical-align: top;"><strong>3. Install dependencies:</strong></td>
+    <td style="width: 60%; vertical-align: top;">
+      <pre><code class="language-bash">
+pip install -r requirements.txt
+      </code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 40%; vertical-align: top;"><strong>4. Run database migrations:</strong></td>
+    <td style="width: 60%; vertical-align: top;">
+      <pre><code class="language-bash">
 python manage.py makemigrations
 python manage.py migrate
-Create a superuser (admin account):
-
-Bash
-
+      </code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 40%; vertical-align: top;"><strong>5. Create a superuser (admin account):</strong></td>
+    <td style="width: 60%; vertical-align: top;">
+      <pre><code class="language-bash">
 python manage.py createsuperuser
-Follow the prompts to create your admin username, email, and password.
-
-Start the development server:
-
-Bash
-
+      </code></pre>
+      Follow the prompts to create your admin username, email, and password.
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 40%; vertical-align: top;"><strong>6. Start the development server:</strong></td>
+    <td style="width: 60%; vertical-align: top;">
+      <pre><code class="language-bash">
 python manage.py runserver
-The application will be accessible 1  at http://127.0.0.1:8000/.   
- 1. 
+      </code></pre>
+    </td>
+  </tr>
+</table>
 github.com
 github.com
 
