@@ -1,44 +1,66 @@
-# Gas Utility Customer Service System
+<h1>Gas Utility Customer Service System</h1>
 
-[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
-[![Django](https://img.shields.io/badge/Django-5.2-green.svg)](https://www.djangoproject.com/)
-[![SQLite](https://img.shields.io/badge/SQLite-3-lightgray.svg)](https://www.sqlite.org/index.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) A Django application designed to streamline customer service for gas utility companies. This system aims to enhance support efficiency and significantly reduce customer wait times by providing a user-friendly platform for submitting and managing service requests.
+<p>
+  <a href="https://www.python.org/downloads/release/python-3120/">
+    <img src="https://img.shields.io/badge/Python-3.12-blue.svg" alt="Python 3.12">
+  </a>
+  <a href="https://www.djangoproject.com/">
+    <img src="https://img.shields.io/badge/Django-5.2-green.svg" alt="Django 5.2">
+  </a>
+  <a href="https://www.sqlite.org/index.html">
+    <img src="https://img.shields.io/badge/SQLite-3-lightgray.svg" alt="SQLite 3">
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  </a>
+</p>
 
-## ✨ Features
+<p>A Django application designed to streamline customer service for gas utility companies. This system aims to enhance support efficiency and significantly reduce customer wait times by providing a user-friendly platform for submitting and managing service requests.</p>
 
-- **Submit and Manage Gas Service Requests:** Customers can easily submit new service requests with relevant details.
-- **Track Request Status:** Real-time updates on the status of service requests (Submitted, In Progress, Resolved, Closed).
-- **Staff Dashboard:** A dedicated dashboard for staff members to review, approve, and reject customer requests.
-- **File Attachments:** Option for users to attach relevant files (e.g., images, documents) to their service requests for better issue evidence.
-- **Authentication:** Secure user authentication system with login, logout, and registration functionalities.
-- **Admin Panel:** Django's built-in admin interface for managing staff users and system configurations.
-- **Bulk Resolve Tool:** Administrators have access to a tool for resolving multiple requests efficiently.
+<h2>✨ Features</h2>
 
-## 🛠️ Tech Stack
+<ul>
+  <li><strong>Submit and Manage Gas Service Requests:</strong> Customers can easily submit new service requests with relevant details.</li>
+  <li><strong>Track Request Status:</strong> Real-time updates on the status of service requests (Submitted, In Progress, Resolved, Closed).</li>
+  <li><strong>Staff Dashboard:</strong> A dedicated dashboard for staff members to review, approve, and reject customer requests.</li>
+  <li><strong>File Attachments:</strong> Option for users to attach relevant files (e.g., images, documents) to their service requests for better issue evidence.</li>
+  <li><strong>Authentication:</strong> Secure user authentication system with login, logout, and registration functionalities.</li>
+  <li><strong>Admin Panel:</strong> Django's built-in admin interface for managing staff users and system configurations.</li>
+  <li><strong>Bulk Resolve Tool:</strong> Administrators have access to a tool for resolving multiple requests efficiently.</li>
+</ul>
 
-This project is built using the following technologies:
+<h2>🛠️ Tech Stack</h2>
 
-- **Backend:**
-    - [Python 3.12](https://www.python.org/downloads/release/python-3120/)
-    - [Django 5.2](https://www.djangoproject.com/)
-    - Database:
-        - [SQLite](https://www.sqlite.org/index.html) (Default)
-        - [PostgreSQL](https://www.postgresql.org/) (Optional)
-- **Frontend:**
-    - HTML5
-    - CSS (Template-based)
+<ul>
+  <li><strong>Backend:</strong>
+    <ul>
+      <li><a href="https://www.python.org/downloads/release/python-3120/">Python 3.12</a></li>
+      <li><a href="https://www.djangoproject.com/">Django 5.2</a></li>
+      <li>Database:
+        <ul>
+          <li><a href="https://www.sqlite.org/index.html">SQLite</a> (Default)</li>
+          <li><a href="https://www.postgresql.org/">PostgreSQL</a> (Optional)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Frontend:</strong>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS (Template-based)</li>
+    </ul>
+  </li>
+</ul>
 
-
-## ⚙️ Setup Instructions
+<h2>⚙️ Setup Instructions</h2>
 
 <table>
   <tr>
     <td style="width: 40%; vertical-align: top;"><strong>1. Clone the repository:</strong></td>
     <td style="width: 60%; vertical-align: top;">
       <code>
-      git clone [https://github.com/dhaneshredd6/Django-Gas-Utility-App.git](https://github.com/dhaneshredd6/Django-Gas-Utility-App.git)<br>
-      cd gas-utility-system
+        git clone <a href="https://github.com/dhaneshredd6/Django-Gas-Utility-App.git">https://github.com/dhaneshredd6/Django-Gas-Utility-App.git</a><br>
+        cd gas-utility-system
       </code>
     </td>
   </tr>
@@ -48,7 +70,7 @@ This project is built using the following technologies:
       <pre><code class="language-bash">
 python -m venv env
 source env/bin/activate  # On Linux/macOS
-env\Scripts\activate   # On Windows
+env\Scripts\activate    # On Windows
       </code></pre>
     </td>
   </tr>
@@ -87,31 +109,47 @@ python manage.py runserver
     </td>
   </tr>
 </table>
-github.com
-github.com
 
-🔑 Accessing Admin and Staff Tools
-Admin Panel: Navigate to http://127.0.0.1:8000/admin/ and log in using the superuser credentials you created. Here, you can manage users and other administrative tasks.
+<h2>🔑 User Registration and Login</h2>
 
-Staff Dashboard:
+<ul>
+  <li><strong>Registration:</strong> To create a new user account, navigate to <a href="http://127.0.0.1:8000/register/">http://127.0.0.1:8000/register/</a> in your web browser and follow the registration process.</li>
+  <li><strong>Login:</strong> Once you have registered, you can log in to your user account by navigating to <a href="http://127.0.0.1:8000/login/">http://127.0.0.1:8000/login/</a> and entering your credentials.</li>
+</ul>
 
-Log in to the admin panel (/admin/).
-Find the user you want to grant staff access.
-Check the "Staff status" box and save the user.
-Staff users can then access the staff dashboard at http://127.0.0.1:8000/staff/dashboard/.
-📂 Project Structure
-![image](https://github.com/user-attachments/assets/2e6ac965-55a9-4bcc-94fa-f84daf12d6fd)
+<h2>🔑 Accessing Admin and Staff Tools</h2>
 
-📌 Important Notes
-Ensure that the staff_dashboard.html file is located within the services/templates/ directory.
-Access to the staff dashboard (/staff/dashboard/) is restricted to users with staff status. You need to mark users as "staff" in the Django admin panel.
-✅ Project Goals Achieved
-This project successfully addresses the key objectives of the assignment:
+<ul>
+  <li><strong>Admin Panel:</strong> Navigate to <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a> and log in using the superuser credentials you created. Here, you can manage users and other administrative tasks.</li>
+  <li><strong>Staff Dashboard:</strong>
+    <ol>
+      <li>Log in to the admin panel (<a href="http://127.0.0.1:8000/admin/">/admin/</a>).</li>
+      <li>Find the user you want to grant staff access.</li>
+      <li>Check the "Staff status" box and save the user.</li>
+      <li>Staff users can then access the staff dashboard at <a href="http://127.0.0.1:8000/staff/dashboard/">http://127.0.0.1:8000/staff/dashboard/</a>.</li>
+    </ol>
+  </li>
+</ul>
 
-✅ Handles a large volume of customer requests effectively.
-✅ Enables a complete tracking lifecycle for service requests.
-✅ Provides dedicated support tools for agents through the staff dashboard.
-✅ Follows a clean and modular Django project structure.
-✅ Implements custom dashboards with real-time counters (implementation details in views.py and templates).
-✅ Maintains a modular and readable application structure within the services app.
-✅ Incorporates both staff and customer perspectives through separate dashboards and functionalities.
+<h2>📂 Project Structure</h2>
+
+<img src="https://github.com/user-attachments/assets/2e6ac965-55a9-4bcc-94fa-f84daf12d6fd" alt="Project Structure">
+
+<h2>📌 Important Notes</h2>
+
+<ul>
+  <li>Ensure that the <code>staff_dashboard.html</code> file is located within the <code>services/templates/</code> directory.</li>
+  <li>Access to the staff dashboard (<code>/staff/dashboard/</code>) is restricted to users with staff status. You need to mark users as "staff" in the Django admin panel.</li>
+</ul>
+
+<h2>✅ Project Goals Achieved</h2>
+
+<ul>
+  <li>✅ Handles a large volume of customer requests effectively.</li>
+  <li>✅ Enables a complete tracking lifecycle for service requests.</li>
+  <li>✅ Provides dedicated support tools for agents through the staff dashboard.</li>
+  <li>✅ Follows a clean and modular Django project structure.</li>
+  <li>✅ Implements custom dashboards with real-time counters (implementation details in <code>views.py</code> and templates).</li>
+  <li>✅ Maintains a modular and readable application structure within the <code>services</code> app.</li>
+  <li>✅ Incorporates both staff and customer perspectives through separate dashboards and functionalities.</li>
+</ul>
