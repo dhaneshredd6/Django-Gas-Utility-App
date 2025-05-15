@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Dashboard - Manage Requests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        form.inline {
+            display: inline;
+        }
+        button {
+            padding: 6px 12px;
+            margin: 2px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .reject-btn {
+            background-color: #e74c3c;
+        }
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: white;
+        }
+        .submitted { background-color: #3498db; }
+        .in_progress { background-color: #f39c12; }
+        .resolved { background-color: #27ae60; }
+        .closed { background-color: #95a5a6; }
+
+        .bulk-submit-btn {
+            margin-top: 15px;
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Staff Dashboard - Manage All Requests</h1>
+
+    <form method="post" action="{% url 'bulk_resolve' %}">
+        {% csrf_token %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                    <th>Submitted At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for request in requests %}
+                <tr>
+                    <td>
+                        {% if request.status != 'resolved' and request.status != 'closed' %}
+                            <input type="checkbox" name="selected_requests" value="{{ request.id }}">
+                        {% endif %}
+                    </td>
+                    <td>{{ request.user.username }}</td>
+                    <td>{{ request.get_request_type_display }}</td>
+                    <td>
+                        <span class="status-badge {{ request.status }}">
+                            {{ request.get_status_display }}
+                        </span>
+                    </td>
+                    <td>{{ request.description|truncatewords:15 }}</td>
+                    <td>{{ request.submitted_at|date:"Y-m-d H:i" }}</td>
+                    <td>
+                        {% if request.status != 'resolved' and request.status != 'closed' %}
+                        <form method="post" action="{% url 'approve_request' request.id %}" class="inline">
+                            {% csrf_token %}
+                            <button type="submit">Approve</button>
+                        </form>
+                        <form method="post" action="{% url 'reject_request' request.id %}" class="inline">
+                            {% csrf_token %}
+                            <button type="submit" class="reject-btn">Reject</button>
+                        </form>
+                        {% else %}
+                            <em>No action</em>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="7">No requests found.</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <button type="submit" class="bulk-submit-btn">Resolve Selected</button>
+    </form>
+
+</body>
+</html>

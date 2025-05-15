@@ -1,0 +1,17 @@
+<h2>My Submitted Requests</h2>
+
+{% if user_requests %}
+  <ul>
+    {% for req in user_requests %}
+      <li>
+        <strong>Category:</strong> {{ req.category }} |
+        <strong>Description:</strong> {{ req.description }} |
+        <strong>Status:</strong> {{ req.status }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>You haven't submitted any service requests yet.</p>
+  <a href="{% url 'submit_request' %}">+ Submit New Request</a>
+
+{% endif %}
