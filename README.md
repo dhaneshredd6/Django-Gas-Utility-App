@@ -47,10 +47,10 @@ source env/bin/activate  # On Linux/macOS
 env\Scripts\activate   # On Windows
 Install dependencies:
 
-Bash
+ -Bash
 
-pip install -r requirements.txt
-Run database migrations:
+-pip install -r requirements.txt
+-Run database migrations:
 
 Bash
 
