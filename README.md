@@ -1,120 +1,111 @@
 # Gas Utility Customer Service System
 
-A Django application to manage customer service requests for a gas utility company. Built to improve customer support efficiency and reduce long wait times.
+[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
+[![Django](https://img.shields.io/badge/Django-5.2-green.svg)](https://www.djangoproject.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-3-lightgray.svg)](https://www.sqlite.org/index.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) A Django application designed to streamline customer service for gas utility companies. This system aims to enhance support efficiency and significantly reduce customer wait times by providing a user-friendly platform for submitting and managing service requests.
 
----
+## ✨ Features
 
-##  Features
+- **Submit and Manage Gas Service Requests:** Customers can easily submit new service requests with relevant details.
+- **Track Request Status:** Real-time updates on the status of service requests (Submitted, In Progress, Resolved, Closed).
+- **Staff Dashboard:** A dedicated dashboard for staff members to review, approve, and reject customer requests.
+- **File Attachments:** Option for users to attach relevant files (e.g., images, documents) to their service requests for better issue evidence.
+- **Authentication:** Secure user authentication system with login, logout, and registration functionalities.
+- **Admin Panel:** Django's built-in admin interface for managing staff users and system configurations.
+- **Bulk Resolve Tool:** Administrators have access to a tool for resolving multiple requests efficiently.
 
-- Submit and manage gas service requests
-- Track request status (submitted, in progress, resolved, closed)
-- Staff dashboard to approve/reject requests
-- File attachments for issue evidence
-- Authentication (login/logout/register)
-- Admin panel for staff
-- Bulk resolve tool for admins
+## 🛠️ Tech Stack
 
----
+This project is built using the following technologies:
 
-## Tech Stack
+- **Backend:**
+    - [Python 3.12](https://www.python.org/downloads/release/python-3120/)
+    - [Django 5.2](https://www.djangoproject.com/)
+    - Database:
+        - [SQLite](https://www.sqlite.org/index.html) (Default)
+        - [PostgreSQL](https://www.postgresql.org/) (Optional)
+- **Frontend:**
+    - HTML5
+    - CSS (Template-based)
 
-- Python 3.12
-- Django 4.x
-- SQLite (default) or PostgreSQL (optional)
-- HTML/CSS (template-based)
+## ⚙️ Setup Instructions
 
----
+Follow these steps to get the application running on your local machine:
 
-## 🛠️ Setup Instructions
-
-1. **Clone the repository**
+1. **Clone the repository:**
    ```bash
-   https://github.com/dhaneshredd6/Django-Gas-Utility-App.git
+   git clone [https://github.com/dhaneshredd6/Django-Gas-Utility-App.git](https://github.com/dhaneshredd6/Django-Gas-Utility-App.git)
    cd gas-utility-system
-   
-2.**Create and activate a virtual environment**
-  python -m venv env
-  source env/bin/activate   # On Windows: env\Scripts\activate
-  
-3.**Install requirements**
- pip install -r requirements.txt
- 
-4.**Run migrations
- python manage.py makemigrations
- python manage.py migrate
- 
-5.**Create superuser
+
+   Create and activate a virtual environment:
+
+Bash
+
+python -m venv env
+source env/bin/activate  # On Linux/macOS
+env\Scripts\activate   # On Windows
+Install dependencies:
+
+Bash
+
+pip install -r requirements.txt
+Run database migrations:
+
+Bash
+
+python manage.py makemigrations
+python manage.py migrate
+Create a superuser (admin account):
+
+Bash
+
 python manage.py createsuperuser
+Follow the prompts to create your admin username, email, and password.
 
-6.**Start development server
- python manage.py runserver
+Start the development server:
 
+Bash
 
-🔐 Admin Tools
-Login to /admin/ with superuser credentials
+python manage.py runserver
+The application will be accessible 1  at http://127.0.0.1:8000/.   
+ 1. 
+github.com
+github.com
 
-Mark users as "staff" to access /staff/dashboard/
+🔑 Accessing Admin and Staff Tools
+Admin Panel: Navigate to http://127.0.0.1:8000/admin/ and log in using the superuser credentials you created. Here, you can manage users and other administrative tasks.
 
-Approve/reject requests individually or use bulk actions
+Staff Dashboard:
 
-📁 Project Structure
+Log in to the admin panel (/admin/).
+Find the user you want to grant staff access.
+Check the "Staff status" box and save the user.
+Staff users can then access the staff dashboard at http://127.0.0.1:8000/staff/dashboard/.
+📂 Project Structure
+project/
+├── services/                 # Main application logic
+│   ├── admin.py              # Admin interface customizations for staff
+│   ├── models.py             # Defines the ServiceRequest data model
+│   ├── views.py              # Handles the logic for user and staff dashboards
+│   ├── urls.py               # Defines the URL patterns for the 'services' app
+│   └── templates/          # HTML templates for the 'services' app
+│       ├── dashboard.html    # Template for the user dashboard
+│       └── staff_dashboard.html # Template for the staff-only dashboard
+│   └── static/               # Static files (CSS, JavaScript) for the 'services' app
+├── templates/                # Global HTML templates for the project
+├── db.sqlite3                # Default SQLite database file
+└── manage.py                 # Django management script
+📌 Important Notes
+Ensure that the staff_dashboard.html file is located within the services/templates/ directory.
+Access to the staff dashboard (/staff/dashboard/) is restricted to users with staff status. You need to mark users as "staff" in the Django admin panel.
+✅ Project Goals Achieved
+This project successfully addresses the key objectives of the assignment:
 
-    project/
-│
-├── services/               # Main app
-│   ├── admin.py            # Admin interface for staff
-│   ├── models.py           # ServiceRequest model
-│   ├── views.py            # Views for user/staff dashboards
-│   ├── urls.py             # App URLs
-│   └── templates/
-│       ├── dashboard.html          # User dashboard
-│       └── staff_dashboard.html    # Staff-only dashboard
-│
-├── static/                # Static files (CSS/JS)
-├── templates/             # Global templates
-├── db.sqlite3             # Database
-└── manage.py
-
-#Technologies Used
-
-Django 5.2
-
-SQLite3
-
-HTML5 + CSS
-
-Optional file attachment support
-
-Simple role-based access logic
-
-📌 Notes
-
-Make sure you have staff_dashboard.html under services/templates/
-
-You must be logged in as a staff user to access the staff dashboard
-
-This project fulfills the key goals of the assignment:
-
-✅ Handles large volume of customer requests
-
-✅ Enables full tracking lifecycle
-
-✅ Provides support tools for agents
-
-✅ Follows clean and modular Django structure
-
-
-✅ Used custom dashboards with real-time counters
-
-✅ Followed modular and readable app structure
-
-✅ Included both staff and customer perspectives
-
-
-
-
-
-
-
-
-
+✅ Handles a large volume of customer requests effectively.
+✅ Enables a complete tracking lifecycle for service requests.
+✅ Provides dedicated support tools for agents through the staff dashboard.
+✅ Follows a clean and modular Django project structure.
+✅ Implements custom dashboards with real-time counters (implementation details in views.py and templates).
+✅ Maintains a modular and readable application structure within the services app.
+✅ Incorporates both staff and customer perspectives through separate dashboards and functionalities.
